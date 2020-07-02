@@ -1,10 +1,10 @@
-package com.masivian.rouletteTestForMasivian.database;
+package com.masivian.rouletteTestForMasivian.web;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RouletteTestForMasivianApplicationTests {
+class RouletteTestForMasivianDatabase1ApplicationTests {
 
 	@Test
 	void contextLoads() {
