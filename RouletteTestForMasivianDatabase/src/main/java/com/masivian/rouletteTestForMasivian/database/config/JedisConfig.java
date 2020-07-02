@@ -1,4 +1,4 @@
-package com.masivian.rouletteTestForMasivian.web.config;
+package com.masivian.rouletteTestForMasivian.database.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
