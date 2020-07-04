@@ -2,52 +2,72 @@ package com.masivian.rouletteTestForMasivian.database.entity;
 
 import java.io.Serializable;
 
+import org.springframework.data.redis.core.index.Indexed;
+
 /**
  * @author meliza
  *
  */
-public class Player implements Serializable { 
+public class Bet implements Serializable { 
     private static final long serialVersionUID = 1L;
-	private String id;
-	private int betNumber;
+    
+    @Indexed
+	private Long id;
+	private Long betNumber;
 	private String colorSelected;
-	private long moneyAmount;
+	private Long moneyAmount;
+	private Long roulette;
 		
-	public Player() {
+	public Bet() {
 		super();
 		
-	}
+	}	
 	
-	public Player(String id, int betNumber, String colorSelected, long moneyAmount) {
+	public Bet(Long id, Long betNumber, String colorSelected, Long moneyAmount) {
 		super();
 		this.id = id;
 		this.betNumber = betNumber;
 		this.colorSelected = colorSelected;
 		this.moneyAmount = moneyAmount;
-	}	
-	
-	public String getId() {
+	}
+
+	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
+
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getBetNumber() {
+
+	public Long getBetNumber() {
 		return betNumber;
 	}
-	public void setBetNumber(int betNumber) {
+
+	public void setBetNumber(Long betNumber) {
 		this.betNumber = betNumber;
 	}
+
 	public String getColorSelected() {
 		return colorSelected;
 	}
+
 	public void setColorSelected(String colorSelected) {
 		this.colorSelected = colorSelected;
 	}
-	public long getMoneyAmount() {
+
+	public Long getMoneyAmount() {
 		return moneyAmount;
 	}
-	public void setMoneyAmount(long moneyAmount) {
+
+	public void setMoneyAmount(Long moneyAmount) {
 		this.moneyAmount = moneyAmount;
+	}
+
+	public Long getRoulette() {
+		return roulette;
+	}
+
+	public void setRoulette(Long roulette) {
+		this.roulette = roulette;
 	}	
 }

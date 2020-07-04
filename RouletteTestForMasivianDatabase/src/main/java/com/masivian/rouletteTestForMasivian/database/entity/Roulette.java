@@ -3,50 +3,60 @@ package com.masivian.rouletteTestForMasivian.database.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.data.redis.core.index.Indexed;
+
 /**
  * @author Meliza
  */
 public class Roulette implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private String id;
+	@Indexed
+	private Long id;
 	private String name;
-	private List<Integer> numbers;
-	private String player;
+	private List<Bet> bet;
+	private boolean status;
 		
 	public Roulette() {
 		super();
-	}
+	}	
 
-	public Roulette(String id, String name, List<Integer> numbers, String player) {
+	public Roulette(Long id, String name, List<Bet> bet, boolean status) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.numbers = numbers;
-		this.player = player;
+		this.bet = bet;
+		this.status = status;
 	}
-	
-	public String getId() {
+
+	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
+
+	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Integer> getBetNumber() {
-		return numbers;
+
+	public List<Bet> getBet() {
+		return bet;
 	}
-	public void setBetNumber(List<Integer> numbers) {
-		this.numbers = numbers;
+
+	public void setBet(List<Bet> bet) {
+		this.bet = bet;
 	}
-	public String getPlayer() {
-		return player;
+
+	public boolean isStatus() {
+		return status;
 	}
-	public void setPlayer(String player) {
-		this.player = player;
-	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}		
 }
