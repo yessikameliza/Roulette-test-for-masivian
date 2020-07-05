@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.masivian.rouletteTestForMasivian.database.entity.Bet;
 import com.masivian.rouletteTestForMasivian.database.entity.Roulette;
 import com.masivian.rouletteTestForMasivian.database.repository.BetRepository;
-import com.masivian.rouletteTestForMasivian.database.utils.ValidateBetFields;
+import com.masivian.rouletteTestForMasivian.database.validation.ValidateBetFields;
 
 @Service
 public class BetServiceImpl implements BetService {

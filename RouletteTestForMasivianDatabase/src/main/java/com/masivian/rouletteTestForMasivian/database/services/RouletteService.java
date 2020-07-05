@@ -1,5 +1,7 @@
 package com.masivian.rouletteTestForMasivian.database.services;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 
 import com.masivian.rouletteTestForMasivian.database.entity.Bet;
@@ -10,4 +12,5 @@ public interface RouletteService {
 	public ResponseEntity<Long> openRoulette(Long rouletteId);
 	public Roulette checkRouletteValid(Long rouletteId);
 	public void saveBetInRoulette(Bet bet, Roulette roulette);
+	public ResponseEntity<List<Bet>> closeRoulette(Long rouletteId);
 }

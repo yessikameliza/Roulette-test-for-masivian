@@ -1,5 +1,6 @@
 package com.masivian.rouletteTestForMasivian.database.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,9 +41,9 @@ public class RouletteServiceImpl implements RouletteService {
 	@Override
 	public Roulette checkRouletteValid(Long rouletteId) {
 		Optional<Roulette> getRoulette = rouletteRepository.findById(rouletteId);
-		if(getRoulette.get().isStatus())
+		if (getRoulette.isPresent() && getRoulette.get().isStatus()) {
 			return getRoulette.get();
-		
+		}	
 		return null;
 	}
 
@@ -50,5 +51,17 @@ public class RouletteServiceImpl implements RouletteService {
 	public void saveBetInRoulette(Bet bet, Roulette roulette) {
 		roulette.getBet().add(bet);
 		rouletteRepository.save(roulette);
+	}
+	
+	@Override
+	public ResponseEntity<List<Bet>> closeRoulette(Long rouletteId){
+		Roulette roulette = checkRouletteValid(rouletteId);
+		if(roulette != null) {
+			roulette.setStatus(false);
+			rouletteRepository.save(roulette);
+			return new ResponseEntity<List<Bet>>(roulette.getBet(), HttpStatus.OK);
+		}	
+		
+		return new ResponseEntity<List<Bet>>(HttpStatus.BAD_REQUEST);
 	}
 }

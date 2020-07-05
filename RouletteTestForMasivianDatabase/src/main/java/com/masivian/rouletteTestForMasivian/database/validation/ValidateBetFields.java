@@ -1,4 +1,4 @@
-package com.masivian.rouletteTestForMasivian.database.utils;
+package com.masivian.rouletteTestForMasivian.database.validation;
 
 import com.masivian.rouletteTestForMasivian.database.entity.Bet;
 
