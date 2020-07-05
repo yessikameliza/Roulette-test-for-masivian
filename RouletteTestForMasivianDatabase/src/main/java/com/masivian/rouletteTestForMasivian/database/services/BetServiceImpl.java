@@ -33,7 +33,7 @@ public class BetServiceImpl implements BetService{
 	}
 
 	@Override
-	public ResponseEntity<HashMap<String, Object>> saveBet(Bet bet) {
+	public ResponseEntity<?> saveBet(Bet bet) {
 		// TODO Auto-generated method stub
 		return null;
 	}
