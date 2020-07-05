@@ -1,4 +1,4 @@
-package com.masivian.rouletteTestForMasivian.database.config;
+package com.masivian.rouletteTestForMasivian.database.redisConfig;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -7,13 +7,15 @@ import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.data.redis.serializer.GenericToStringSerializer;
 import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
  
 @Configuration
-public class JedisConfig { 
+@EnableRedisRepositories
+public class RedisConfig { 
 	@Value("${spring.redis.host}")
     private String REDIS_HOSTNAME;
     @Value("${spring.redis.port}")
