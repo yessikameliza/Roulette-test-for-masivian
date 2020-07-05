@@ -1,5 +1,9 @@
 package com.masivian.rouletteTestForMasivian.database.services;
 
-public interface RouletteService {
+import org.springframework.http.ResponseEntity;
 
+import com.masivian.rouletteTestForMasivian.database.entity.Roulette;
+
+public interface RouletteService {
+	public ResponseEntity<Long> createRoulette(Roulette roulette); 
 }

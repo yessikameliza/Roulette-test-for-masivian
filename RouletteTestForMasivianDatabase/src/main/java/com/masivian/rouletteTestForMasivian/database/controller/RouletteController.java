@@ -20,31 +20,24 @@ import com.masivian.rouletteTestForMasivian.database.entity.Bet;
 import com.masivian.rouletteTestForMasivian.database.entity.Roulette;
 import com.masivian.rouletteTestForMasivian.database.repository.RouletteRepository;
 import com.masivian.rouletteTestForMasivian.database.services.BetService;
+import com.masivian.rouletteTestForMasivian.database.services.RouletteService;
 import com.masivian.rouletteTestForMasivian.database.utils.ValidateFields;
  
 @RestController
 @CrossOrigin
 @RequestMapping("/roulettes")
-public class RouletteController {
- 
-    @Autowired
-    private RouletteRepository rouletteRepository;
+public class RouletteController {    
     
     @Autowired
     private BetService betService;
+    @Autowired
+    private RouletteService rouletteService;
  
-    @PostMapping("/save_roulettes")
-    public ResponseEntity<HashMap<String, Object>> createRoulette(@RequestBody Bet bet){
-    	boolean isValidate = ValidateFields.validateFields(bet);
-    	ResponseEntity<HashMap<String, Object>> response = null;
+    @PostMapping("/create_roulette")
+    public ResponseEntity<Long> createRoulette(@RequestBody Roulette roulette){
+    	ResponseEntity<Long> rouletteResponse = rouletteService.createRoulette(roulette);
     	
-    	if (isValidate) {
-    		response = betService.createBet(bet); 
-    		return response;
-		}    	 	
-    	HashMap<String, Object> aux=new HashMap<String, Object>(); 
-    	response = new ResponseEntity<HashMap<String, Object>>(aux, HttpStatus.BAD_REQUEST);
-        return response;
+    	return rouletteResponse;
     }
  
     @GetMapping("all_roulettes")
