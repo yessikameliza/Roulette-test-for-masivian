@@ -26,8 +26,7 @@ import com.masivian.rouletteTestForMasivian.database.utils.ValidateFields;
 @RestController
 @CrossOrigin
 @RequestMapping("/roulettes")
-public class RouletteController {    
-    
+public class RouletteController {        
     @Autowired
     private BetService betService;
     @Autowired
@@ -40,9 +39,11 @@ public class RouletteController {
     	return rouletteResponse;
     }
  
-    @GetMapping("all_roulettes")
-    public List<Roulette> list(){
-        return rouletteRepository.findAll();
+    @GetMapping("open_roulette/{rouletteId}")
+    public ResponseEntity<Long> openRoulette(@RequestBody Long rouletteId){ 
+    	ResponseEntity<Long> rouletteResponse = rouletteService.openRoulette(rouletteId);
+    	
+        return rouletteResponse;
     }
  
     @GetMapping("/{id}")
