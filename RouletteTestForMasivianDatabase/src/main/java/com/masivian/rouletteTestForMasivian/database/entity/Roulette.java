@@ -15,10 +15,10 @@ public class Roulette implements Serializable {
 	private String name;
 	private List<Bet> bet;
 	private boolean status;
-		
+
 	public Roulette() {
 		super();
-	}	
+	}
 
 	public Roulette(Long id, String name, List<Bet> bet, boolean status) {
 		super();
@@ -58,5 +58,5 @@ public class Roulette implements Serializable {
 
 	public void setStatus(boolean status) {
 		this.status = status;
-	}		
+	}
 }

@@ -5,24 +5,22 @@ import java.io.Serializable;
 import org.springframework.data.redis.core.index.Indexed;
 
 /**
- * @author meliza
- *
+ * @author meliza *
  */
-public class Bet implements Serializable { 
-    private static final long serialVersionUID = 1L;
-    
-    @Indexed
+public class Bet implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@Indexed
 	private Long id;
 	private Long betNumber;
 	private String colorSelected;
 	private Long moneyAmount;
 	private Long roulette;
-		
+	private String player;
+
 	public Bet() {
 		super();
-		
-	}	
-	
+	}
+
 	public Bet(Long id, Long betNumber, String colorSelected, Long moneyAmount) {
 		super();
 		this.id = id;
@@ -69,5 +67,13 @@ public class Bet implements Serializable {
 
 	public void setRoulette(Long roulette) {
 		this.roulette = roulette;
-	}	
+	}
+
+	public String getPlayer() {
+		return player;
+	}
+
+	public void setPlayer(String player) {
+		this.player = player;
+	}
 }

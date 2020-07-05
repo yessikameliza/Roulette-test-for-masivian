@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +22,7 @@ import com.masivian.rouletteTestForMasivian.database.entity.Roulette;
 import com.masivian.rouletteTestForMasivian.database.repository.RouletteRepository;
 import com.masivian.rouletteTestForMasivian.database.services.BetService;
 import com.masivian.rouletteTestForMasivian.database.services.RouletteService;
-import com.masivian.rouletteTestForMasivian.database.utils.ValidateFields;
+import com.masivian.rouletteTestForMasivian.database.utils.ValidateBetFields;
  
 @RestController
 @CrossOrigin
@@ -39,16 +40,18 @@ public class RouletteController {
     	return rouletteResponse;
     }
  
-    @GetMapping("open_roulette/{rouletteId}")
-    public ResponseEntity<Long> openRoulette(@RequestBody Long rouletteId){ 
+    @PutMapping("open_roulette/")
+    public ResponseEntity<Long> openRoulette(@RequestParam("id") Long rouletteId){ 
     	ResponseEntity<Long> rouletteResponse = rouletteService.openRoulette(rouletteId);
     	
         return rouletteResponse;
     }
  
-    @GetMapping("/{id}")
-    public Roulette getroulette(@PathVariable String id){
-        return rouletteRepository.findById(id);
+    @PostMapping("/place_bet")
+    public ResponseEntity<String> placeBet(@RequestBody Bet newBet){ 
+    	ResponseEntity<String> bet = betService.newBet(newBet);
+    	
+        return bet;
     }
  
     @PutMapping
