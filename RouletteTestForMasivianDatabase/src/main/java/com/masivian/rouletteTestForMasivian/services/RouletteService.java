@@ -1,11 +1,11 @@
-package com.masivian.rouletteTestForMasivian.database.services;
+package com.masivian.rouletteTestForMasivian.services;
 
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import com.masivian.rouletteTestForMasivian.database.entity.Bet;
-import com.masivian.rouletteTestForMasivian.database.entity.Roulette;
+import com.masivian.rouletteTestForMasivian.entity.Bet;
+import com.masivian.rouletteTestForMasivian.entity.Roulette;
 
 public interface RouletteService {
 	public ResponseEntity<Long> createRoulette(Roulette roulette); 

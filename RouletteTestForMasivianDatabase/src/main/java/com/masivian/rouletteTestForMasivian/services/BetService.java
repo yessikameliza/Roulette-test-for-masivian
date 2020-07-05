@@ -1,8 +1,8 @@
-package com.masivian.rouletteTestForMasivian.database.services;
+package com.masivian.rouletteTestForMasivian.services;
 
 import org.springframework.http.ResponseEntity;
 
-import com.masivian.rouletteTestForMasivian.database.entity.Bet;
+import com.masivian.rouletteTestForMasivian.entity.Bet;
 
 public interface BetService {		
 	public ResponseEntity<String> newBet(Bet newBet); 

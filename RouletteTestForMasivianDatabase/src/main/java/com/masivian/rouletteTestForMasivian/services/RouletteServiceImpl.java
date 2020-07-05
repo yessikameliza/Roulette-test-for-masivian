@@ -1,4 +1,4 @@
-package com.masivian.rouletteTestForMasivian.database.services;
+package com.masivian.rouletteTestForMasivian.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.masivian.rouletteTestForMasivian.database.entity.Bet;
-import com.masivian.rouletteTestForMasivian.database.entity.Roulette;
-import com.masivian.rouletteTestForMasivian.database.repository.RouletteRepository;
+import com.masivian.rouletteTestForMasivian.entity.Bet;
+import com.masivian.rouletteTestForMasivian.entity.Roulette;
+import com.masivian.rouletteTestForMasivian.repository.RouletteRepository;
 
 public class RouletteServiceImpl implements RouletteService {	
 	@Autowired

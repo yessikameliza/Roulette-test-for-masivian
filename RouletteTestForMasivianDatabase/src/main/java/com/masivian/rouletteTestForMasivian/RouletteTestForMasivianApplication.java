@@ -1,13 +1,13 @@
-package com.masivian.rouletteTestForMasivian.database;
+package com.masivian.rouletteTestForMasivian;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RouletteTestForMasivianDatabaseApplication {
+public class RouletteTestForMasivianApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RouletteTestForMasivianDatabaseApplication.class, args);
+		SpringApplication.run(RouletteTestForMasivianApplication.class, args);
 	}
 
 }

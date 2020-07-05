@@ -1,6 +1,6 @@
-package com.masivian.rouletteTestForMasivian.database.validation;
+package com.masivian.rouletteTestForMasivian.validation;
 
-import com.masivian.rouletteTestForMasivian.database.entity.Bet;
+import com.masivian.rouletteTestForMasivian.entity.Bet;
 
 public class ValidateBetFields {
 	public ValidateBetFields() {

@@ -1,4 +1,4 @@
-package com.masivian.rouletteTestForMasivian.database.services;
+package com.masivian.rouletteTestForMasivian.services;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,10 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.masivian.rouletteTestForMasivian.database.entity.Bet;
-import com.masivian.rouletteTestForMasivian.database.entity.Roulette;
-import com.masivian.rouletteTestForMasivian.database.repository.BetRepository;
-import com.masivian.rouletteTestForMasivian.database.validation.ValidateBetFields;
+import com.masivian.rouletteTestForMasivian.entity.Bet;
+import com.masivian.rouletteTestForMasivian.entity.Roulette;
+import com.masivian.rouletteTestForMasivian.repository.BetRepository;
+import com.masivian.rouletteTestForMasivian.validation.ValidateBetFields;
 
 @Service
 public class BetServiceImpl implements BetService {

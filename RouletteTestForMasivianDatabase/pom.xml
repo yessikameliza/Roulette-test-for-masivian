@@ -8,11 +8,11 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.masivian.rouletteTestForMasivian.web</groupId>
-	<artifactId>RouletteTestForMasivianDatabase</artifactId>
+	<groupId>com.masivian.rouletteTestForMasivian</groupId>
+	<artifactId>RouletteTestForMasivian</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>RouletteTestForMasivianDatabase</name>
+	<name>RouletteTestForMasivian</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

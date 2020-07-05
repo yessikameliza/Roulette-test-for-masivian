@@ -1,4 +1,4 @@
-package com.masivian.rouletteTestForMasivian.database.redisConfig;
+package com.masivian.rouletteTestForMasivian.redisConfig;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

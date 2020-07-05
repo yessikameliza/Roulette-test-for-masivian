@@ -1,4 +1,4 @@
-package com.masivian.rouletteTestForMasivian.database;
+package com.masivian.rouletteTestForMasivian;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(RouletteTestForMasivianDatabaseApplication.class);
+		return application.sources(RouletteTestForMasivianApplication.class);
 	}
 
 }

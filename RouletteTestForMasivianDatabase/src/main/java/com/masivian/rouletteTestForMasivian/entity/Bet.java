@@ -1,4 +1,4 @@
-package com.masivian.rouletteTestForMasivian.database.entity;
+package com.masivian.rouletteTestForMasivian.entity;
 
 import java.io.Serializable;
 

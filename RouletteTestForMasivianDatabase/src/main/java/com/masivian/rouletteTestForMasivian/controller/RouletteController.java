@@ -1,4 +1,4 @@
-package com.masivian.rouletteTestForMasivian.database.controller;
+package com.masivian.rouletteTestForMasivian.controller;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.masivian.rouletteTestForMasivian.database.entity.Bet;
-import com.masivian.rouletteTestForMasivian.database.entity.Roulette;
-import com.masivian.rouletteTestForMasivian.database.services.BetService;
-import com.masivian.rouletteTestForMasivian.database.services.RouletteService;
+import com.masivian.rouletteTestForMasivian.entity.Bet;
+import com.masivian.rouletteTestForMasivian.entity.Roulette;
+import com.masivian.rouletteTestForMasivian.services.BetService;
+import com.masivian.rouletteTestForMasivian.services.RouletteService;
 
 @RestController
 @CrossOrigin
