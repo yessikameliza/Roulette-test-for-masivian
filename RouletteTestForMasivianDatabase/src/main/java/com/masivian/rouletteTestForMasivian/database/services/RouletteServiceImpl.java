@@ -21,20 +21,20 @@ public class RouletteServiceImpl implements RouletteService {
 			roulette.setStatus(false);
 			Roulette newRoulette = rouletteRepository.save(roulette);
 			Long rouletteId = newRoulette.getId();			
-			return new ResponseEntity<Long>(rouletteId, HttpStatus.ACCEPTED);
+			return new ResponseEntity<Long>(rouletteId, HttpStatus.OK);
 		} catch(Exception e) {			
 			return new ResponseEntity<Long>(HttpStatus.BAD_REQUEST);
 		}		
 	}
 	
 	@Override
-	public ResponseEntity<Long> openRoulette(Long rouletteId) {
+	public ResponseEntity<String> openRoulette(Long rouletteId) {
 		try {
 			Optional<Roulette> getRoulette = rouletteRepository.findById(rouletteId);
 			getRoulette.get().setStatus(true);			
-			return new ResponseEntity<Long>(HttpStatus.ACCEPTED);
+			return new ResponseEntity<String>("Operación exitosa", HttpStatus.OK);
 		} catch(Exception e) {			
-			return new ResponseEntity<Long>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>("Operación denegada", HttpStatus.BAD_REQUEST);
 		}		
 	}
 	
@@ -63,5 +63,12 @@ public class RouletteServiceImpl implements RouletteService {
 		}	
 		
 		return new ResponseEntity<List<Bet>>(HttpStatus.BAD_REQUEST);
+	}
+	
+	@Override
+	public ResponseEntity<Iterable<Roulette>> allRoulette(){
+		Iterable<Roulette> roulette = rouletteRepository.findAll();
+		
+		return  new ResponseEntity<Iterable<Roulette>>(roulette, HttpStatus.OK);
 	}
 }

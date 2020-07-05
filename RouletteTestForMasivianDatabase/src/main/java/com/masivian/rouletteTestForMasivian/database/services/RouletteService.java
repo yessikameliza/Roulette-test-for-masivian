@@ -9,8 +9,9 @@ import com.masivian.rouletteTestForMasivian.database.entity.Roulette;
 
 public interface RouletteService {
 	public ResponseEntity<Long> createRoulette(Roulette roulette); 
-	public ResponseEntity<Long> openRoulette(Long rouletteId);
+	public ResponseEntity<String> openRoulette(Long rouletteId);
 	public Roulette checkRouletteValid(Long rouletteId);
 	public void saveBetInRoulette(Bet bet, Roulette roulette);
 	public ResponseEntity<List<Bet>> closeRoulette(Long rouletteId);
+	public ResponseEntity<Iterable<Roulette>> allRoulette();
 }
