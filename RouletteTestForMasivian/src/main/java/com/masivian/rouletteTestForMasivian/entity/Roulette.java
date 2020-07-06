@@ -2,7 +2,6 @@ package com.masivian.rouletteTestForMasivian.entity;
 
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.index.Indexed;
 
