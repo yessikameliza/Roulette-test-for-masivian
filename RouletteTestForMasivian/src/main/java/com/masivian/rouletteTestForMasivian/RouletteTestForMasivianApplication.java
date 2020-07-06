@@ -9,5 +9,4 @@ public class RouletteTestForMasivianApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RouletteTestForMasivianApplication.class, args);
 	}
-
 }

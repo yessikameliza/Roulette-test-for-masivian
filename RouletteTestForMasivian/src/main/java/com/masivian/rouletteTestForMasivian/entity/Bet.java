@@ -1,14 +1,13 @@
 package com.masivian.rouletteTestForMasivian.entity;
 
-import java.io.Serializable;
-
+import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.index.Indexed;
 
 /**
  * @author meliza *
  */
-public class Bet implements Serializable {
-	private static final long serialVersionUID = 1L;
+@RedisHash("Bet")
+public class Bet {
 	@Indexed
 	private Long id;
 	private Long betNumber;

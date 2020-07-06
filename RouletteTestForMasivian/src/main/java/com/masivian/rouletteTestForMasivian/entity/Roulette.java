@@ -1,15 +1,16 @@
 package com.masivian.rouletteTestForMasivian.entity;
 
-import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.index.Indexed;
 
 /**
  * @author Meliza
  */
-public class Roulette implements Serializable {
-	private static final long serialVersionUID = 1L;
+@RedisHash("Roulette")
+public class Roulette {
 	@Indexed
 	private Long id;
 	private String name;

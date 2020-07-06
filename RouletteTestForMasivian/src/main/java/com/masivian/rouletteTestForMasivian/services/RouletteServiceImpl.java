@@ -1,16 +1,19 @@
 package com.masivian.rouletteTestForMasivian.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import com.masivian.rouletteTestForMasivian.entity.Bet;
 import com.masivian.rouletteTestForMasivian.entity.Roulette;
 import com.masivian.rouletteTestForMasivian.repository.RouletteRepository;
 
+@Service
 public class RouletteServiceImpl implements RouletteService {	
 	@Autowired
     private RouletteRepository rouletteRepository;
@@ -31,7 +34,8 @@ public class RouletteServiceImpl implements RouletteService {
 	public ResponseEntity<String> openRoulette(Long rouletteId) {
 		try {
 			Optional<Roulette> getRoulette = rouletteRepository.findById(rouletteId);
-			getRoulette.get().setStatus(true);			
+			getRoulette.get().setStatus(true);
+			rouletteRepository.save(getRoulette.get());
 			return new ResponseEntity<String>("Operación exitosa", HttpStatus.OK);
 		} catch(Exception e) {			
 			return new ResponseEntity<String>("Operación denegada", HttpStatus.BAD_REQUEST);
@@ -49,6 +53,8 @@ public class RouletteServiceImpl implements RouletteService {
 
 	@Override
 	public void saveBetInRoulette(Bet bet, Roulette roulette) {
+		if(roulette.getBet() == null)
+			roulette.setBet(new ArrayList<Bet>());
 		roulette.getBet().add(bet);
 		rouletteRepository.save(roulette);
 	}

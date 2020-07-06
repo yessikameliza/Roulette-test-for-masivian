@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +18,6 @@ import com.masivian.rouletteTestForMasivian.services.BetService;
 import com.masivian.rouletteTestForMasivian.services.RouletteService;
 
 @RestController
-@CrossOrigin
 public class RouletteController {
 	@Autowired
 	private BetService betService;
@@ -32,8 +31,8 @@ public class RouletteController {
 		return rouletteResponse;
 	}
 
-	@PutMapping("/open_roulette/")
-	public ResponseEntity<String> openRoulette(@RequestParam("id") Long rouletteId) {
+	@PutMapping("/open_roulette/{rouletteId}")
+	public ResponseEntity<String> openRoulette(@PathVariable Long rouletteId) {
 		ResponseEntity<String> rouletteResponse = rouletteService.openRoulette(rouletteId);
 
 		return rouletteResponse;
@@ -46,8 +45,8 @@ public class RouletteController {
 		return bet;
 	}
 
-	@PutMapping("/close_roulette/")
-	public ResponseEntity<List<Bet>> update(@RequestParam("id") Long rouletteId) {
+	@PutMapping("/close_roulette/{rouletteId}")
+	public ResponseEntity<List<Bet>> update(@PathVariable Long rouletteId) {
 		ResponseEntity<List<Bet>> response = rouletteService.closeRoulette(rouletteId);
 
 		return response;

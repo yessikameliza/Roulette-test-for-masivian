@@ -7,9 +7,9 @@ public class ValidateBetFields {
 		super();
 	}
 
-	public boolean validateFields(Bet bet) {
-		if (bet.getColorSelected() != null && (bet.getColorSelected().equalsIgnoreCase("Rojo")
-				|| bet.getColorSelected().equalsIgnoreCase("Negro"))) {
+	public static boolean validateFields(Bet bet) {
+		if (bet.getColorSelected() != null && (bet.getColorSelected().equalsIgnoreCase("rojo")
+				|| bet.getColorSelected().equalsIgnoreCase("negro"))) {
 			return true;
 		}
 		if (bet.getBetNumber() != null && bet.getBetNumber() >= 0 && bet.getBetNumber() <= 36) {

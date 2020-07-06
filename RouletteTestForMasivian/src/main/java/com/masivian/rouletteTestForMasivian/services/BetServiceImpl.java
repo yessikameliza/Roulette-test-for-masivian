@@ -15,17 +15,17 @@ import com.masivian.rouletteTestForMasivian.validation.ValidateBetFields;
 @Service
 public class BetServiceImpl implements BetService {
 	@Autowired
-	private BetRepository betRepository;
+	BetRepository betRepository;
 	@Autowired
-	private RouletteService rouletteService;
+	RouletteService rouletteService;
 	@Autowired
-	private HttpServletRequest requestHeaders;
-	private ValidateBetFields validateBetFields;
+	HttpServletRequest requestHeaders;
+	ValidateBetFields validateBetFields;
 
 	@Override
 	public ResponseEntity<String> newBet(Bet bet) {
 		Roulette checkRouletteValid = rouletteService.checkRouletteValid(bet.getRoulette());
-		boolean isValid = validateBetFields.validateFields(bet);
+		boolean isValid = ValidateBetFields.validateFields(bet);
 		bet.setPlayer(requestHeaders.getHeader("user"));
 		Long amount = bet.getMoneyAmount();
 		if (checkRouletteValid != null && amount != null
